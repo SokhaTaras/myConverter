@@ -1,0 +1,50 @@
+.myHeader{
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.headerDiv{
+  display: inline-flex;
+  font-size: 25px;
+
+  transition: all 1s;
+}
+
+.headerDiv:hover{
+  font-size: 35px;
+}
+
+.myContainer{
+  text-align: center;
+}
+
+.navBlock{
+  display: inline-flex;
+}
+
+.navDiv{
+  margin: 5px;
+  margin-top: 15px;
+}
+
+.navBTN{
+  border: none;
+  background-color: snow;
+  cursor: pointer;
+
+  width: 125px;
+  height: 50px;
+
+  transition: all .5s;
+}
+
+.navBTN:hover{
+  color: white;
+  background-image: linear-gradient(to right top ,lightskyblue,blueviolet);
+
+  height: 60px;
+  width: 150px;
+  font-size: 18px;
+
+}

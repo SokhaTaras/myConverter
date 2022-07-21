@@ -1,0 +1,115 @@
+<div class="mainConverterDiv">
+  <div class="containerForInput">
+    <input class="coverterInput" type="number"  value="{{speed}}" [(ngModel)]="speed" (ngModelChange)="speedChamged($event)"/>
+    <select class="mySelect" #inputOne (click)="inputOne">
+      <option value="kilometr/hour" selected>kilometr/hour</option>
+      <option value="mile/hour">mile/hour</option>
+      <option value="metr/second">metr/second</option>
+      <option value="foot/second">foot/second</option>
+      <option value="knots">knots</option>
+    </select>
+  </div>
+
+  <div [ngSwitch]="inputOne.value" class="ourCases">
+    <ng-template ngSwitchCase="kilometr/hour" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Kilometers per hour: {{speed | number:'1.0-7'}}
+        </li>
+        <li>
+          Miles per hour: {{speed/1.609 | number:'1.0-3'}}
+        </li>
+        <li>
+          Meters per second: {{speed/3.6 | number:'1.0-3'}}
+        </li>
+        <li>
+          Foots per second: {{speed/1.097 | number:'1.0-3'}}
+        </li>
+        <li>
+          Knots: {{speed/1.852 | number:'1.0-3'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="mile/hour" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Kilometers per hour: {{speed*1.609 | number:'1.0-3'}}
+        </li>
+        <li>
+          Miles per hour: {{speed | number:'1.0-7'}}
+        </li>
+        <li>
+          Meters per second: {{speed/2.237 | number:'1.0-3'}}
+        </li>
+        <li>
+          Foots per second: {{speed*1.467 | number:'1.0-3'}}
+        </li>
+        <li>
+          Knots: {{speed/1.151 | number:'1.0-3'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="metr/second" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Kilometers per hour: {{speed*3.6 | number:'1.0-3'}}
+        </li>
+        <li>
+          Miles per hour: {{speed*2.237 | number:'1.0-3'}}
+        </li>
+        <li>
+          Meters per second: {{speed | number:'1.0-3'}}
+        </li>
+        <li>
+          Foots per second: {{speed*3.281 | number:'1.0-3'}}
+        </li>
+        <li>
+          Knots: {{speed*1.944 | number:'1.0-3'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="foot/second" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Kilometers per hour: {{speed*1.097 | number:'1.0-3'}}
+        </li>
+        <li>
+          Miles per hour: {{speed/1.467 | number:'1.0-3'}}
+        </li>
+        <li>
+          Meters per second: {{speed/3.281 | number:'1.0-3'}}
+        </li>
+        <li>
+          Foots per second: {{speed}}
+        </li>
+        <li>
+          Knots: {{speed/1.68 | number:'1.0-3'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="knots" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Kilometers per hour: {{speed*1.852 | number:'1.0-3'}}
+        </li>
+        <li>
+          Miles per hour: {{speed*1.151 | number:'1.0-3'}}
+        </li>
+        <li>
+          Meters per second: {{speed/1.944 | number:'1.0-3'}}
+        </li>
+        <li>
+          Foots per second: {{speed*1.688 | number:'1.0-3'}}
+        </li>
+        <li>
+          Knots: {{speed}}
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+
+</div>

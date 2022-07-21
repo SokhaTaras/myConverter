@@ -1,0 +1,318 @@
+<div class="mainConverterDiv">
+  <div class="containerForInput">
+    <input class="coverterInput" type="number" #queryInput  value="{{length}}"  [(ngModel)]="length" (ngModelChange)="lengthChanged($event)"  />
+    <select class="mySelect" #inputOne (click)="inputOne.value" >
+      <option value="meter" selected>meter</option>
+      <option value="kilometr">kilometr</option>
+      <option value="centimeter">centimeter</option>
+      <option value="millimeter">millimeter</option>
+      <option value="micrometer">micrometer</option>
+      <option value="nanometer">nanometer</option>
+      <option value="mile">mile</option>
+      <option value="foot">foot</option>
+      <option value="inch">inch</option>
+    </select>
+  </div>
+
+  <div>length: {{length}}</div>
+
+  <div [ngSwitch]="inputOne.value" class="ourCases">
+    <ng-template ngSwitchCase="meter" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Kilometers: {{length/1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length*100 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length*1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*1e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*1e+9 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/1609 | number:'1.0-5'}}
+        </li>
+        <li>
+          Foot: {{length*3.281 | number:'1.0-7'}}
+        </li>
+        <li>
+          Inch: {{length*39.37 | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="kilometr" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length*1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kilometers: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length*100000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length*1e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*1e+9 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*1e+12 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/1.609 | number:'1.0-3'}}
+        </li>
+        <li>
+          Foot: {{length*3281 | number:'1.0-7'}}
+        </li>
+        <li>
+          Inch: {{length*39370 | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="centimeter" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length/100 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kilometers: {{length/100000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length*10 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*10000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*1e+7 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/160900 | number:'1.0-7'}}
+        </li>
+        <li>
+          Foot: {{length/30.48 | number:'1.0-4'}}
+        </li>
+        <li>
+          Inch: {{length/2.54 | number:'1.0-3'}}
+        </li>
+      </ul>
+    </ng-template>
+
+
+
+
+    <ng-template ngSwitchCase="millimeter" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length/1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kilometers: {{length/1e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length/10 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*1e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/1.609e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Foot: {{length/304.8 | number:'1.0-5'}}
+        </li>
+        <li>
+          Inch: {{length/25.4 | number:'1.0-4'}}
+        </li>
+      </ul>
+    </ng-template>
+
+
+    <ng-template ngSwitchCase="micrometer" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length/1e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kilometers: {{length/1e+9  }}
+        </li>
+        <li>
+          Centimeter: {{length/10000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length/1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/1.609e+9 }}
+        </li>
+        <li>
+          Foot: {{length/304800 | number:'1.0-7'}}
+        </li>
+        <li>
+          Inch: {{length/25400 | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+
+
+    <ng-template ngSwitchCase="nanometer" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length/1e+9}}
+        </li>
+        <li>
+          Kilometers: {{length/1e+12}}
+        </li>
+        <li>
+          Centimeter: {{length/1e+7 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length/1e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length/1000 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/1.609e+12 }}
+        </li>
+        <li>
+          Foot: {{length/3.048e+8}}
+        </li>
+        <li>
+          Inch: {{length/2.54e+7}}
+        </li>
+      </ul>
+    </ng-template>
+
+
+    <ng-template ngSwitchCase="mile" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length*1609 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kilometers: {{length*1.609 | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length*160900 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length*1.609e+6 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*1.609e+9 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*1.609e+12 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length | number:'1.0-7'}}
+        </li>
+        <li>
+          Foot: {{length*5280 | number:'1.0-7'}}
+        </li>
+        <li>
+          Inch: {{length*63360 | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+
+    <ng-template ngSwitchCase="foot" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length/3.281 | number:'1.0-3'}}
+        </li>
+        <li>
+          Kilometers: {{length/3281 | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length*30.48 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length*304.8 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*304800 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*3.048e+8 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/5280 | number:'1.0-5'}}
+        </li>
+        <li>
+          Foot: {{length}}
+        </li>
+        <li>
+          Inch: {{length*12 | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+
+    <ng-template ngSwitchCase="inch" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Meters: {{length/39.37 | number:'1.0-3'}}
+        </li>
+        <li>
+          Kilometers: {{length/39370 | number:'1.0-7'}}
+        </li>
+        <li>
+          Centimeter: {{length*2.54 | number:'1.0-7'}}
+        </li>
+        <li>
+          Millimeter: {{length*25.4 | number:'1.0-7'}}
+        </li>
+        <li>
+          Micrometer: {{length*25400 | number:'1.0-7'}}
+        </li>
+        <li>
+          Nanometer: {{length*2.54e+7 | number:'1.0-7'}}
+        </li>
+        <li>
+          Mile: {{length/63360 | number:'1.0-5'}}
+        </li>
+        <li>
+          Foot: {{length*12 | number:'1.0-7'}}
+        </li>
+        <li>
+          Inch: {{length | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+
+</div>

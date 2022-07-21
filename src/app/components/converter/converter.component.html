@@ -1,0 +1,41 @@
+
+<header class="myHeader">
+  <div class="headerDiv">
+    ConverTar welcomes you
+  </div>
+</header>
+
+<router-outlet></router-outlet>
+
+
+<div class="myContainer">
+  <nav class="navBlock">
+    <div class="navDiv">
+      <a routerLink="metric-converter"
+         routerLinkActive="activeLink"
+         queryParamsHandling="merge"
+         [queryParams]="{'kindOfValue': 'metric'}">
+       <button  class="navBTN">Metric</button>
+     </a>
+    </div>
+
+    <div class="navDiv">
+      <a routerLink="speed-converter"
+         routerLinkActive="activeLink"
+         queryParamsHandling="merge"
+         [queryParams]="{'kindOfValue': 'speed'}">
+        <button class="navBTN">Speed</button>
+      </a>
+   </div>
+
+    <div class="navDiv">
+      <a routerLink="temperature-converter"
+         routerLinkActive="activeLink"
+         queryParamsHandling="merge"
+         [queryParams]="{'kindOfValue': 'temperature' }">
+       <button class="navBTN">Temperature</button>
+      </a>
+    </div>
+
+  </nav>
+</div>

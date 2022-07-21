@@ -1,0 +1,55 @@
+<div class="mainConverterDiv">
+  <div class="containerForInput">
+    <input class="coverterInput" type="number"  value="{{temperature}}" [(ngModel)]="temperature" (ngModelChange)="temperatureChanged($event)"/>
+    <select class="mySelect" #inputOne (click)="inputOne">
+      <option value="celsius" selected>Celsius</option>
+      <option value="farengeyt">Farengeyt</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+  </div>
+
+  <div [ngSwitch]="inputOne.value" class="ourCases">
+    <ng-template ngSwitchCase="celsius" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Celsius degrees: {{temperature | number:'1.0-7'}}
+        </li>
+        <li>
+          Farengeyt degrees: {{(temperature * 9/5)+32 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kelvin degrees: {{temperature+273 | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="farengeyt" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Celsius degrees: {{(temperature-32)*5/9 | number:'1.0-5'}}
+        </li>
+        <li>
+          Farengeyt degrees: {{temperature | number:'1.0-7'}}
+        </li>
+        <li>
+          Kelvin degrees: {{(temperature-32)*5/9+273 | number:'1.0-5'}}
+        </li>
+      </ul>
+    </ng-template>
+
+    <ng-template ngSwitchCase="kelvin" class="outputWrap">
+      <ul class="columns">
+        <li>
+          Celsius degrees: {{temperature-273 | number:'1.0-7'}}
+        </li>
+        <li>
+          Farengeyt degrees: {{(temperature-273)*9/5+32 | number:'1.0-7'}}
+        </li>
+        <li>
+          Kelvin degrees: {{temperature | number:'1.0-7'}}
+        </li>
+      </ul>
+    </ng-template>
+
+  </div>
+</div>
