@@ -17,10 +17,18 @@
 
 .myContainer{
   text-align: center;
+  width: 100%;
 }
 
 .navBlock{
   display: inline-flex;
+}
+@media screen and (max-width: 450px) {
+  .navBlock{
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 .navDiv{

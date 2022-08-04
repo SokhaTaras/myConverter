@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 .page{
-  background-image: linear-gradient(to right ,lightskyblue, blueviolet);
+  background: linear-gradient(to right ,lightskyblue, blueviolet) no-repeat center center fixed;
+  background-size: cover;
   font-family: "Candara Light";
+}
+
+@media screen and (min-width: 300px) {
+  .media{
+  display: none;
+  }
+}
+@media screen and  (max-width: 450px){
+  .page{
+
+  }
 }

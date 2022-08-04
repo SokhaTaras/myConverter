@@ -1,3 +1,4 @@
+
 .mainConverterDiv{
   width: 50%;
   margin: auto;
@@ -48,6 +49,8 @@ li {
   transition: all .5s;
 }
 
+
+
 /*hiding arrows in input*/
 input:focus,
 input::-webkit-outer-spin-button,
@@ -77,4 +80,24 @@ select:focus{
 
 .mySelect:hover {
   background: lightskyblue;
+}
+
+@media screen and (max-width: 450px) {
+  .containerForInput{
+    width: 100%;
+  }
+  .outputWrap{
+    width: 90%;
+  }
+  .columns{
+    width: 90%;
+  }
+  .mainConverterDiv{
+    width: 90%;
+  }
+  .coverterInput{
+    width: 90%;
+    justify-content: center;
+    align-content: center;
+  }
 }

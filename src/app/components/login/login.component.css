@@ -11,6 +11,12 @@ input.ng-touched.ng-valid {border:solid green 2px;}
   width: 30%;
 }
 
+@media screen and (max-width: 500px){
+  .ourForm{
+    width: 65%;
+  }
+}
+
 #myLogin{
   text-align: center;
   border-bottom: 1px solid black;

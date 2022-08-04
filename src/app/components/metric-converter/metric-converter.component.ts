@@ -20,13 +20,13 @@ export class MetricConverterComponent implements OnInit {
   length:number = 1;
 
   lengthChanged(myLength: any){
-    const queryParams: Params = { value: myLength };
+    const myQueryParams: Params = { value: myLength };
 
     this.router.navigate(
       [],
       {
         relativeTo: this.route,
-        queryParams: queryParams,
+        queryParams: myQueryParams,
         queryParamsHandling: 'merge', // remove to replace all query params by provided
       });
   }
